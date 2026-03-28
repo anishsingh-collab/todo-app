@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Neural Quad</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo-circle"><span>NQ</span></div>
+    <h2 class="team-name">The Neural Quad</h2>
+
+    <div class="menu">
+      <div class="menu-item" onclick="loadTemplate()">Templates</div>
+
+      <div class="menu-item">
+        Categories
+        <div class="dropdown">
+          <div onclick="filterTasks('all')">All</div>
+          <div onclick="filterTasks('business')">Business</div>
+          <div onclick="filterTasks('personal')">Personal</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleAnalytics()">Analytics</div>
+    </div>
+
+    <div class="graph"></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <h1 id="welcomeText"></h1>
+
+    <div class="categories">
+      <div class="cat-card">
+        <span id="businessCount">0 tasks</span>
+        <h3>Business</h3>
+      </div>
+
+      <div class="cat-card">
+        <span id="personalCount">0 tasks</span>
+        <h3>Personal</h3>
+      </div>
+    </div>
+
+    <div id="taskList"></div>
+
+    <!-- ANALYTICS -->
+    <div id="analyticsPanel" class="analytics hidden">
+      <h2>Analytics Dashboard</h2>
+      <canvas id="taskChart"></canvas>
+
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+
+      <p id="progressText">0% Completed</p>
+    </div>
+
+    <!-- ADD TASK -->
+    <div class="add">
+      <input id="taskInput" placeholder="Add a new task...">
+
+      <select id="category">
+        <option value="business">Business</option>
+        <option value="personal">Personal</option>
+      </select>
+
+      <button onclick="addTask()">＋</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

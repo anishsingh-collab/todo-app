@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #8ea2d9;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #0c1b4d;
+  color: white;
+  padding: 20px;
+}
+
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #ff00ff, #6a5cff);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.menu-item {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  background: #1b2f72;
+  border-radius: 10px;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown div {
+  padding: 10px;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  color: white;
+}
+
+.cat-card {
+  background: #1b2f72;
+  padding: 20px;
+  border-radius: 15px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.task {
+  background: #1b2f72;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ff00ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle.done {
+  background: #ff00ff;
+}
+
+/* ADD TASK BAR (MODERN) */
+.add {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Input */
+.add input {
+  padding: 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  width: 200px;
+}
+
+.add input::placeholder {
+  color: rgba(21, 21, 21, 0.6);
+}
+
+/* Dropdown */
+.add select {
+  border: none;
+  background: transparent;
+  color: rgb(68, 15, 92);
+  padding: 14px;
+  outline: none;
+}
+
+/* BUTTON 🔥 */
+.add button {
+  background: linear-gradient(135deg, #ff00ff, #6a5cff);
+  border: none;
+  color: rgb(18, 107, 170);
+  font-size: 20px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.add button:hover {
+  background: linear-gradient(135deg, #ff33ff, #7d6bff);
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+/* Click effect */
+.add button:active {
+  transform: scale(0.9);
+}
+
+.analytics {
+  margin-top: 20px;
+  background: #1b2f72;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.hidden {
+  display: none;
+}
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  .categories {
+    flex-direction: column;
+  }
+
+  .add {
+    bottom: 10px;
+    right: 10px;
+    width: 90%;
+  }
+
+  .add input {
+    width: 100%;
+  }
+
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, red, darkred);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
